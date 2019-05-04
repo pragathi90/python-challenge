@@ -8,7 +8,7 @@ import csv
 #as the csv is in the loxal folder
 budget_data = os.path.join("budget_data.csv")
 
-#variables defined
+#variables defined - initially 0
 tot_months = 0
 tot_pl = 0
 val = 0
@@ -38,7 +38,7 @@ with open(budget_data, newline = "") as csvfile:
         
         
         change = int(row[1])-val
-        #added it to the profits array i created
+        #added it to the profits array I created
         profits.append(change)
         val = int(row[1])
         
@@ -85,13 +85,13 @@ print("'''")
 #print the analysis to the terminal and export a text file with the results.
 output = open("PyBankOutput.txt", "w")
 
-line1 = "'''text"
-line2 = "Financial Analysis"
-line3 = "---------------------"
-line4 = str(f"Total Months: {str(tot_months)}")
-line5 = str(f"Total: ${str(tot_pl)}")
-line6 = str(f"Average Change: ${str(round(avg_change,2))}")
-line7 = str(f"Greatest Increase in Profits: {greatest_date} (${str(greatest_increase)})")
-line8 = str(f"Greatest Decrease in Profits: {worst_date} (${str(greatest_decrease)})")
-line9 = "'''"
-output.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7,line8,line9))
+l1 = "'''text"
+l2 = "Financial Analysis"
+l3 = "---------------------"
+l4 = str(f"Total Months: {str(tot_months)}")
+l5 = str(f"Total: ${str(tot_pl)}")
+l6 = str(f"Average Change: ${str(round(avg_change,2))}")
+l7 = str(f"Greatest Increase in Profits: {greatest_date} (${str(greatest_increase)})")
+l8 = str(f"Greatest Decrease in Profits: {worst_date} (${str(greatest_decrease)})")
+l9 = "'''"
+output.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(l1,l2,l3,l4,l5,l6,l7,l8,l9))
